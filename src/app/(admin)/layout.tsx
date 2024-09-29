@@ -1,24 +1,23 @@
 /** @format */
 
-import Header from "@/components/organisme/Header";
-import Sidebar from "@/components/organisme/Sidebar";
+import ButtonAdd from "@/components/ButtonAdd";
+import Drawer from "@/components/Drawer";
+import DrawerContent from "@/components/DrawerContent";
+import React, { ReactNode } from "react";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const LayoutPage = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="en">
-      <body>
-        <div className="flex">
-          <Sidebar />
-          <div className="py-12 px-8 flex flex-col gap-12 bg-[#F7F9F2] w-3/4">
-            <Header />
-            <main>{children}</main>
-          </div>
-        </div>
-      </body>
-    </html>
+    <>
+      <div className="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+        <DrawerContent>
+          {children}
+          <ButtonAdd />
+        </DrawerContent>
+        <Drawer />
+      </div>
+    </>
   );
-}
+};
+
+export default LayoutPage;

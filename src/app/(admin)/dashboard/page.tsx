@@ -1,17 +1,16 @@
 /** @format */
 
+import Summaries from "@/components/Summaries";
+import TableProducts from "@/components/TableProducts";
 import React from "react";
-import Summary from "./components/organisme/Summary";
-import RecentTransactions from "./components/organisme/RecentTransactions";
-import TemplatePage from "@/components/template/TemplatePage";
 
 const Page = () => {
   return (
-    <TemplatePage>
-      <Summary/>
-      <RecentTransactions/>
-    </TemplatePage>
-  )
+    <div className="flex flex-col gap-8">
+      <Summaries />
+      <TableProducts />
+    </div>
+  );
 };
 
 export default Page;
